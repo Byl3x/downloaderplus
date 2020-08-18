@@ -6,9 +6,10 @@ read use
 if [ use == "play" ]
 then
 	anime play --list
-elif [ use == "download"]
-then
-	echo "Playing requires MPV"
-	echo "What anime would you like to play?"
+else
+	echo "What anime would you like to download"
 	read animename
-	anime dl $animename
+	echo "What provider to download from?(It is recommended to use 9anime)"
+	read extraargs
+	anime dl "$animename" --provider "$extraargs"
+fi
